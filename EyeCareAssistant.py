@@ -1,10 +1,16 @@
-import pygame
+"""
+EyeCareAssistant can be used as a remainder to keep your eye healthy by giving a 1 minute timeout after 20 minutes.
+"""
+
 import time
+
 import numpy as np
+import pygame
 import sounddevice as sd
 
-# Function to play a beep sound
+
 def play_beep():
+    """Function to play a beep sound"""
     fs = 4410  # Sampling frequency
     duration = 0.7  # Duration in seconds
     frequency = 300  # Frequency in Hz
@@ -13,12 +19,14 @@ def play_beep():
     sd.play(wave, fs)
     sd.wait()
 
-# Function to open a full black screen
+
 def open_full_black_screen():
+    """Function to open a full black screen"""
     # Initialize Pygame
     pygame.init()
 
-    # Set screen dimensions 
+    # TODO adjust screen width/height dynamically
+    # Set screen dimensions
     screen_width = 800
     screen_height = 600
 
@@ -37,7 +45,11 @@ def open_full_black_screen():
     # Close Pygame
     pygame.quit()
 
+
 def main():
+    """
+    Main function to call other functions.
+    """
     while True:
         # Wait for 10 minute before repeating
         time.sleep(1000)
@@ -50,5 +62,9 @@ def main():
         # Play a beep sound
         play_beep()
 
+
 if __name__ == "__main__":
+    """
+    Program Execution Starts Here.
+    """
     main()
