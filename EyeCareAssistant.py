@@ -18,7 +18,7 @@ def open_full_black_screen():
     # Initialize Pygame
     pygame.init()
 
-    # Set screen dimensions
+    # Set screen dimensions 
     screen_width = 800
     screen_height = 600
 
@@ -40,8 +40,9 @@ def open_full_black_screen():
 def main():
     while True:
         # Wait for 10 minute before repeating
-        time.sleep(600)
-        
+        time.sleep(1000)
+        play_beep()
+        time.sleep(10)
         # Open full black screen
         open_full_black_screen()
         print("Black screen opened for eye protection.")
